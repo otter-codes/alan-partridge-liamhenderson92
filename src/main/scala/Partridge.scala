@@ -1,12 +1,15 @@
 object Partridge extends App {
 
-  def terms(input: Array[String]): String = {
+  def terms(input: Array[String]) : String = {
 
-    if (input.contains("Partridge")) {
-      "Mine's a Pint!"
-    } else {
-      "Lynn, I've pierced my foot with a spike"
-    }
+    val searchWords = List("Partridge", "PearTree", "Chat", "Dan", "Toblerone", "Lynn", "AlphaPapa", "Nomad")
 
+    val count = input.count(x => searchWords contains x)
+    val ex = "!" * count
+
+    if (count == 0) {
+    "Lynn, I've pierced my foot with a spike"
+    } else
+      s"Mine's a Pint${ex}"
   }
 }
